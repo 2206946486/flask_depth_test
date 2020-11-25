@@ -8,4 +8,8 @@ from flask import Flask
 
 def create_app():
     app = Flask(__name__)
+
+    from app.apis.test import test
+    app.register_blueprint(test, url_prefix="/test")
+
     return app
